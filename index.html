@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="topbar-title">Life Dashboard</span>
+      <button id="btn-theme" type="button" aria-label="Toggle light/dark mode">🌙</button>
+    </header>
+
+    <main class="dashboard">
+
+      <section id="greeting-panel">
+        <img id="greeting-avatar" src="images/avatar.png.png" alt="Avatar" />
+        <div id="greeting-time"></div>
+        <div id="greeting-date"></div>
+        <div id="greeting-message"></div>
+        <div class="name-row">
+          <input id="name-input" type="text" placeholder="Enter your name…" autocomplete="off" maxlength="40" aria-label="Your name" />
+          <button id="btn-save-name" type="button">Save</button>
+        </div>
+      </section>
+
+      <section id="timer-panel">
+        <div id="timer-display"></div>
+        <div class="timer-controls">
+          <button id="btn-start" type="button">Start</button>
+          <button id="btn-stop" type="button">Stop</button>
+          <button id="btn-reset" type="button">Reset</button>
+        </div>
+        <div class="timer-duration-row">
+          <label for="timer-duration-input">Duration (min)</label>
+          <input id="timer-duration-input" type="number" min="1" max="120" value="25" aria-label="Timer duration in minutes" />
+          <button id="btn-set-duration" type="button">Set</button>
+        </div>
+      </section>
+
+      <section id="task-panel">
+        <form id="task-form" novalidate>
+          <input id="task-input" type="text" placeholder="Add a new task…" autocomplete="off" />
+          <button type="submit">Add</button>
+        </form>
+        <span id="task-validation-msg" role="alert" aria-live="polite"></span>
+        <ul id="task-list"></ul>
+      </section>
+
+      <section id="link-panel">
+        <form id="link-form" novalidate>
+          <input id="link-label-input" type="text" placeholder="Label" autocomplete="off" />
+          <input id="link-url-input" type="url" placeholder="https://example.com" autocomplete="off" />
+          <button type="submit">Add</button>
+        </form>
+        <span id="link-validation-msg" role="alert" aria-live="polite"></span>
+        <ul id="link-list"></ul>
+      </section>
+
+    </main>
+    <script defer src="js/app.js"></script>
+  </body>
+</html>
